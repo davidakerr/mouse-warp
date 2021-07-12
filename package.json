@@ -1,6 +1,6 @@
 {
   "name": "mouse-warp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Join disconnected extended displays",
   "main": "main.js",
   "scripts": {
@@ -8,15 +8,15 @@
     "postinstall": "electron-builder install-app-deps",
     "build": "electron-builder build --win portable"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/davidakerr/mouse-warp",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "windows",
+    "extended",
+    "displays",
+    "mouse",
+    "warp"
   ],
-  "author": "GitHub",
+  "author": "David Kerr",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^13.1.6",

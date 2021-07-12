@@ -1,7 +1,7 @@
 // Modules to control application life and create native browser window
 
-const Engine = require("./engine");
 const { app } = require("electron");
+const Engine = require("./application/engine");
 
 const engine = new Engine();
 

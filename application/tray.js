@@ -7,7 +7,7 @@ class TrayIcon {
     this.tray = null;
   }
   setup(createWindow) {
-    this.tray = new Tray(path.join(__dirname, "icon.png"));
+    this.tray = new Tray(path.join(__dirname, "../icon.png"));
     const contextMenu = Menu.buildFromTemplate([
       {
         label: "View",
