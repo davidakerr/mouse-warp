@@ -6,21 +6,19 @@ const { renderMonitor } = require("./renderMonitor");
 const { setMonitorColor } = require("./setMonitorColor");
 
 window.addEventListener("DOMContentLoaded", () => {
-  ipcRenderer.on("setDisplayChromeListener", (event, response) => {
-    response.forEach((monitor) => {
+  ipcRenderer.once("bootstrapDisplaysChromeListener", (event, monitors) => {
+    console.log("bootstrapDisplaysChromeListener Response", monitors);
+    monitors.forEach(renderMonitor(monitors));
+  });
+
+  ipcRenderer.on("setDisplayChromeListener", (event, monitors) => {
+    monitors.forEach((monitor) => {
       setMonitorColor(
         monitor.selected,
         document.getElementById(monitor.name),
         monitor.index
       );
     });
-  });
-
-  ipcRenderer.once("bootstrapDisplaysChromeListener", (event, monitors) => {
-    let colors = ["red", "blue", "green"];
-    console.log("bootstrapDisplaysChromeListener Response", monitors);
-
-    monitors.forEach(renderMonitor(monitors));
   });
 
   ipcRenderer.send("getAllDisplaysAppListener");

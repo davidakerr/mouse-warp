@@ -17,8 +17,9 @@
         background-color: #ccc;
         display: flex;
         align-items: center;
-        font-size: xx-large;
+        font-size: x-large;
         justify-content: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
     </style>
     <meta charset="UTF-8" />
@@ -30,89 +31,7 @@
     <title>Mouse Warp</title>
   </head>
   <body>
-    <!-- <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
-
-    <main class="content-wraper" id="content-wraper">
-      <div class="content-blk">
-        Helo.. This is my first desktop app
-        <button id="loadnewwindow">click to load new window</button>
-        <div id="”message”"></div>
-      </div>
-    </main> -->
-
     <div id="container"></div>
-
-    <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
   </body>
 </html>
-
-<!-- 
-
-<html>
-  <style>
-    #container {
-      position: relative;
-    }
-    .mon {
-      position: absolute;
-      background-color: #ccc;
-    }
-  </style>
-  <body>
-
-
-    <script type="application/javascript">
-      console.log("etf");
-      const diivby = 10;
-      const monitors = [
-        {
-          x: 283,
-          y: -1440,
-          width: 2560,
-          height: 1440,
-          width_mm: 597,
-          height_mm: 336,
-          name: "\\\\.\\DISPLAY1",
-        },
-        {
-          x: 3424,
-          y: -1050,
-          width: 1680,
-          height: 1050,
-          width_mm: 473,
-          height_mm: 296,
-          name: "\\\\.\\DISPLAY2",
-        },
-        {
-          x: 0,
-          y: 0,
-          width: 5120,
-          height: 1440,
-          width_mm: 1193,
-          height_mm: 336,
-          name: "\\\\.\\DISPLAY3",
-        },
-      ];
-
-      let colors = ["red", "blue", "green"];
-
-      monitors.forEach((monitor, index) => {
-        const newDiv = document.createElement("div");
-        newDiv.className = "mon";
-        newDiv.style.top = (monitor.y + 2000) / diivby;
-        newDiv.style.left = monitor.x / diivby;
-
-        newDiv.style.width = monitor.width / diivby;
-        newDiv.style.height = monitor.height / diivby;
-        newDiv.style.backgroundColor = colors[index];
-
-        const currentDiv = document.getElementById("container");
-        currentDiv.appendChild(newDiv);
-      });
-    </script>
-  </body>
-</html> -->

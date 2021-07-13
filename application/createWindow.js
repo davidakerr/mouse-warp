@@ -2,9 +2,7 @@ const { app, BrowserWindow, screen } = require("electron");
 const path = require("path");
 const { find_max_x, find_max_y } = require("./utils");
 
-// TODO:  Will split this up UI / Warp Logic
 const createWindow = () => {
-  // Create the browser window.
   const all = screen.getAllDisplays().map((display) => ({
     ...display.bounds,
   }));

@@ -1,6 +1,6 @@
 {
   "name": "mouse-warp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Join disconnected extended displays",
   "main": "main.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "electron-packager": "^15.2.0"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "nodemon": "^2.0.12",
     "robotjs": "^0.6.0"
   }

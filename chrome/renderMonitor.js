@@ -9,7 +9,7 @@ function renderMonitor(response) {
     newDiv.className = "mon";
     newDiv.style.top = (monitor.y + find_max_minus_y(response)) / SCALER + "px";
     newDiv.style.left = monitor.x / SCALER + "px";
-    newDiv.innerText = index > -1 ? index + 1 : "Not Selected";
+    newDiv.innerText = index + 1;
     newDiv.style.border = "1px solid black";
     newDiv.style.width = monitor.width / SCALER + "px";
     newDiv.style.height = monitor.height / SCALER + "px";

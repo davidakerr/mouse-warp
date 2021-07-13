@@ -1,5 +1,5 @@
 const setMonitorColor = (selected, element, name) => {
-  element.innerText = selected ? name + 1 : "Not Selected";
+  element.innerText = name + 1;
   if (selected) {
     element.style.backgroundColor = "#fff";
     element.style.color = "#303030";
