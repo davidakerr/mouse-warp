@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec electron .",
     "postinstall": "electron-builder install-app-deps",
-    "build": "electron-builder build --win"
+    "build": "electron-builder build --win --publish never"
   },
   "repository": "https://github.com/davidakerr/mouse-warp",
   "keywords": [

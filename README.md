@@ -34,4 +34,10 @@ Todo
 
 # How to compile yourself
 
+- Make sure you have windows-build-tools installed
+- node-gyp
+- python
+
+Have a look at the main.yaml workflow for inspiration.
+
 Any suggestions or PR's are most welcome.
