@@ -1,0 +1,3 @@
+{
+  "ignore": ["application/*.json"]
+}
