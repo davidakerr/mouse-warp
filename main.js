@@ -2,10 +2,15 @@
 
 const { app } = require("electron");
 const Engine = require("./application/engine");
-
 const engine = new Engine();
 
-app.whenReady().then(() => {
+app.on("ready", () => {
+  const isMainInstance = app.requestSingleInstanceLock();
+
+  if (!isMainInstance) {
+    console.log("Already running");
+    app.quit();
+  }
   engine.setup();
 });
 

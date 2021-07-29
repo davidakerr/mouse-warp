@@ -4,6 +4,10 @@ const IPC = require("./icp");
 const TrayIcon = require("./tray");
 const createWindow = require("./createWindow");
 const { screen } = require("electron");
+const fs = require("fs");
+const path = require("path");
+
+const configFile = path.join(__dirname, "config.json");
 
 class Engine {
   constructor() {
@@ -14,6 +18,25 @@ class Engine {
     this.mouseWarpLoop = null;
     this.addDisplay = this.addDisplay.bind(this);
     this.allDisplayInformation = this.allDisplayInformation.bind(this);
+  }
+
+  loadConfiguration() {
+    try {
+      const data = fs.readFileSync(configFile, "utf8");
+      this.displays = JSON.parse(data);
+      return true;
+    } catch (err) {
+      console.error(err);
+      return false;
+    }
+  }
+
+  saveConfiguration() {
+    try {
+      fs.writeFileSync(configFile, JSON.stringify(this.displays));
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   allDisplayInformation() {
@@ -31,6 +54,8 @@ class Engine {
       this.displays = [];
     } else {
       this.displays.push(display);
+      this.saveConfiguration();
+
       this.mouseWarpLoop = setInterval(
         () => this.mouseWarp.loop(this.displays),
         10
@@ -41,6 +66,12 @@ class Engine {
   setup() {
     this.ipc.setupDisplayListeners(this.addDisplay, this.allDisplayInformation);
     this.trayIcon.setup(createWindow);
+    if (this.loadConfiguration()) {
+      this.mouseWarpLoop = setInterval(
+        () => this.mouseWarp.loop(this.displays),
+        10
+      );
+    }
   }
 }
 
