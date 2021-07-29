@@ -6,8 +6,8 @@ const createWindow = require("./createWindow");
 const { screen } = require("electron");
 const fs = require("fs");
 const path = require("path");
-
-const configFile = path.join(__dirname, "config.json");
+const { app } = require("electron");
+const configFile = path.join(app.getPath("userData"), "config.json");
 
 class Engine {
   constructor() {

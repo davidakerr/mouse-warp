@@ -1,6 +1,6 @@
 {
   "name": "mouse-warp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Join disconnected extended displays",
   "main": "main.js",
   "scripts": {
@@ -27,5 +27,8 @@
     "lodash": "^4.17.21",
     "nodemon": "^2.0.12",
     "robotjs": "^0.6.0"
+  },
+  "build": {
+    "productName": "Mouse Warp"
   }
 }
