@@ -23,12 +23,6 @@ _This UX should improve in the future._
 
 # Todo
 
-- Persistent Settings
-- Clean up code
-
-Todo
-
-- Persistent Settings
 - Clean up code
 - Have a refresh button for when the displays are repositioned (currently have to restart the app)
 
